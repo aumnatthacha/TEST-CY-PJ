@@ -1,10 +1,8 @@
+import { login } from "./spec.cy";
+
 describe("Add Dashboard Test", () => {
-  it("should login successfully with correct credentials", () => {
-    cy.visit("http://www.warering.online/home");
-    cy.contains("Sign In").click();
-    cy.get("#username").type("AumNatthacha");
-    cy.get("#password").type("Natthacha2002");
-    cy.get("#setup-user-drawer-submit").click();
+  it("should login successfully with correct credentials and perform device operations", () => {
+    login('AumNatthacha', 'Natthacha2002');
 
     //Add Dashboard
     cy.get("#dashboard-nav-link-sidebar").click();
@@ -14,15 +12,15 @@ describe("Add Dashboard Test", () => {
     // cy.get("#submit-add-dashboard-btn").click();
 
     //Edit
-    cy.get("#edit-dashboard-option-6680e36ec7b871479e610bcf").click();
-    cy.get("#nameDashboard").clear().type("PT-49");
-    cy.get("#description").clear({ force: true }).type("PT-49", { force: true });
-    cy.get("#submit-edit-dashboard-btn").click();
+    // cy.get("#edit-dashboard-option-6683ad5ec7b871479e6125e1").click();
+    // cy.get("#nameDashboard").clear().type("PT-49");
+    // cy.get("#description").clear({ force: true }).type("PT-49", { force: true });
+    // cy.get("#submit-edit-dashboard-btn").click();
 
     //DELETED
-    // cy.get("#delete-dashboard-option-6680e50bc7b871479e610c5c").click();
-    // cy.wait(2000);
-    // cy.get("#confirm-delete-dashboard-btn").click();
+    cy.get("#delete-dashboard-option-6683ad5ec7b871479e6125e1").click();
+    cy.wait(2000);
+    cy.get("#confirm-delete-dashboard-btn").click();
 
     cy.screenshot();
   });
