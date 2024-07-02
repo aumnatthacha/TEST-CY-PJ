@@ -1,9 +1,8 @@
-
 import { login } from "./spec.cy";
 
 describe("Device List Test", () => {
   it("should login successfully with correct credentials and perform device operations", () => {
-    login('AumNatthacha', 'Natthacha2002');
+    login("AumNatthacha", "Natthacha2002");
 
     // Add Device
     cy.get("#devices-nav-link-sidebar").click();
