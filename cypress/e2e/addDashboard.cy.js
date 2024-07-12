@@ -11,7 +11,10 @@ describe("Add Dashboard Test", () => {
     // Add Dashboard
     cy.get("#toggle-add-dashboard-dialog-btn").click();
     cy.get("#nameDashboard").type("Sensor_01");
-    cy.get("#description").type("แดชบอร์ดนี้ใช้ในการตรวจสอบข้อมูลจาก Sensor_01 เช่น อุณหภูมิและความชื้น", { force: true });
+    cy.get("#description").type(
+      "แดชบอร์ดนี้ใช้ในการตรวจสอบข้อมูลจาก Sensor_01 เช่น อุณหภูมิและความชื้น",
+      { force: true }
+    );
     cy.get("#submit-add-dashboard-btn").click();
     cy.contains("Your Sensor_01 dashboard has been added").should("be.visible");
     cy.contains("Sensor_01").should("be.visible");
@@ -20,7 +23,9 @@ describe("Add Dashboard Test", () => {
     // Edit Dashboard
     cy.get("#edit-dashboard-option-66913351fed9b7834140e06b").click();
     cy.get("#nameDashboard").clear().type("Sensor_02");
-    cy.get("#description").clear({ force: true }).type("อุณหภูมิและความชื้น", { force: true });
+    cy.get("#description")
+      .clear({ force: true })
+      .type("อุณหภูมิและความชื้น", { force: true });
     cy.get("#submit-edit-dashboard-btn").click();
     cy.contains("updated your dashboard").should("be.visible");
     cy.screenshot();
