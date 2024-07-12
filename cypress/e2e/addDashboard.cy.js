@@ -18,7 +18,7 @@ describe("Add Dashboard Test", () => {
     cy.screenshot();
 
     // Edit Dashboard
-    cy.get("#edit-dashboard-option-66912f56fed9b7834140df19").click();
+    cy.get("#edit-dashboard-option-66913351fed9b7834140e06b").click();
     cy.get("#nameDashboard").clear().type("Sensor_02");
     cy.get("#description").clear({ force: true }).type("อุณหภูมิและความชื้น", { force: true });
     cy.get("#submit-edit-dashboard-btn").click();
@@ -26,7 +26,7 @@ describe("Add Dashboard Test", () => {
     cy.screenshot();
 
     // Delete Dashboard
-    cy.get("#delete-dashboard-option-66912f56fed9b7834140df19").click();
+    cy.get("#delete-dashboard-option-66913351fed9b7834140e06b").click();
     cy.get("#confirm-delete-dashboard-btn").click();
     cy.contains("deleted your dashboard").should("be.visible");
     cy.screenshot();

@@ -6,17 +6,18 @@ describe("Device List Test", () => {
 
     // Add Device
     cy.get("#devices-nav-link-sidebar").click();
-    /*
+    
     cy.get("#setup-user-submit").click();
-    cy.get("#nameDevice").type("อุปกรณ์การเกษตร", { force: true });
-    cy.get("#usernameDevice").type("K-001", { force: true });
-    cy.get("#password").type("K001-K", { force: true });
-    cy.get("#description").type("อุปกรณ์การเกษตร", { force: true });
-    cy.get("#topics").type("K-001", { force: true });
-    cy.get("#Qos").type("1", { force: true });
+    cy.get("#nameDevice").type("Sensor_01");
+    cy.get("#usernameDevice").type("user");
+    cy.get("#password").type("password123");
+    cy.get("#description").type("แดชบอร์ดนี้ใช้ในการตรวจสอบข้อมูลจาก Sensor_01 เช่น อุณหภูมิและความชื้น");
+    cy.get("#topics").type("ข้อมูลส่งทุก 10 นาที");
+    cy.get("#Qos").type("0", { force: true });
     cy.get("#retain-checkbox").click();
     cy.get("#add-device-submit-btn").click();
-    */
+    cy.contains("Created your Sensor_01 device").should("be.visible");
+    cy.screenshot();
 
     // Edit Device
     /*
