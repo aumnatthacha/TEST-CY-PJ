@@ -12,9 +12,7 @@ describe("Device List Test", () => {
     cy.get("#nameDevice").type("Sensor_01");
     cy.get("#usernameDevice").type("user");
     cy.get("#password").type("password123");
-    cy.get("#description").type(
-      "แดชบอร์ดนี้ใช้ในการตรวจสอบข้อมูลจาก Sensor_01 เช่น อุณหภูมิและความชื้น"
-    );
+    cy.get("#description").type("แดชบอร์ดนี้ใช้ในการตรวจสอบข้อมูลจาก Sensor_01 เช่น อุณหภูมิและความชื้น");
     cy.get("#topics").type("ข้อมูลส่งทุก 10 นาที");
     cy.get("#Qos").type("0");
     cy.get("#retain-checkbox").click();
@@ -30,9 +28,7 @@ describe("Device List Test", () => {
     cy.get("#description").clear().type("อุณหภูมิและความชื้น");
     cy.get("#topics").clear().type("ข้อมูลส่งทุก 11 นาที");
     cy.get("#submit-edit-dashboard-btn").click();
-    cy.contains("Your device information has been edited successfully").should(
-      "be.visible"
-    );
+    cy.contains("Your device information has been edited successfully").should("be.visible");
     cy.screenshot();
 
     // Delete Device (Optional: Uncomment if needed)
