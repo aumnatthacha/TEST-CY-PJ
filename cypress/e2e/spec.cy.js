@@ -1,6 +1,6 @@
 // Define the login function
 export function login(username, password) {
-  cy.visit("http://www.warering.online/home");
+  cy.visit("http://warering.online/home");
   cy.contains("Sign In").click();
   cy.get("#username").type(username);
   cy.get("#password").type(password);
@@ -9,9 +9,9 @@ export function login(username, password) {
 }
 
 //Use the login function in the test ส่วนที่เรียกใช้
-describe('Login Test', () => {
-  it('should login successfully with correct credentials', () => {
-    login('AumNatthacha', 'Natthacha2002');
-  });
-});
+// describe('Login Test', () => {
+//   it('should login successfully with correct credentials', () => {
+//     login('AumNatthacha', 'Natthacha2002');
+//   });
+// });
 
